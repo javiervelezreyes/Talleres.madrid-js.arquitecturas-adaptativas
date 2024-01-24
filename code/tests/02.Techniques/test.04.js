@@ -1,0 +1,62 @@
+import { Methods } from '../../src/helpers/helper.utils.js'
+import { Min     } from '../../src/helpers/helper.tests.js'
+import { Max     } from '../../src/helpers/helper.tests.js'
+
+
+function Test () {
+
+  const MIN = 1
+  const MAX = 5
+  const N   = 2
+
+  function Bondable (core) {
+    let proxy = {}
+    let keys  = Methods (core)
+    for (let key of keys) {
+      let fn = core[key]
+      let gn = function (...args) {
+        let out = fn.call (core, ...args)
+        return Max (Min (out, MAX), MIN)
+      }
+      proxy[key] = gn
+    }
+    return proxy
+  }
+
+  function Accountable (core) {
+    let proxy = { tickets : N }
+    let keys  = Methods (core)
+    for (let key of keys) {
+      let fn = core[key]
+      let gn = function (...args) {
+        if (proxy.tickets) {
+          proxy.tickets--
+          return fn.call (proxy, ...args)
+        }
+      }
+      proxy[key] = gn
+    }
+    return proxy
+  }
+
+  function fx (x) { return x + 1 }
+  function fy (x) { return x - 1 }
+  
+  let CX = { fx, fy }
+  let CY = { fx, fy }
+
+  let PX = Bondable    (CX)
+  let PY = Accountable (CY)
+
+  let RX = [PX.fx (0), PX.fx (3), PX.fx (6)]
+  let RY = [PY.fx (3), PY.fx (3), PY.fx (3)]
+
+  return [
+    CX, CY, 
+    PX, PY,
+    RX, RY
+  ]
+  
+}
+
+export default Test 

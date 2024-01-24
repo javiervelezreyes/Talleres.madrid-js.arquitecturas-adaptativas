@@ -6,7 +6,7 @@ JavaScript · Meta-programming · Components · Traits · Mixins · Aspects · S
 
 ### Resumen
 
-El dinamismo y carácter abierto de JavaScript siempre ha sido interpretado negativamente por los detractores como una característica detestable del lenguaje. Sin embargo, ese mismo espirito, pensado en positivo invita a hacer una revisitación de conceptos acerca de las posibilidades de desarrollo del paradigma en términos de la crecían de arquitecturas plásticas, dinámicas y evolutivas.
+El dinamismo y carácter abierto de JavaScript siempre ha sido interpretado negativamente por los detractores como una característica detestable del lenguaje. Sin embargo, ese mismo espíritu, pensado en positivo invita a hacer una revisitación de conceptos acerca de las posibilidades de desarrollo del paradigma en términos de la creación de arquitecturas plásticas, dinámicas y evolutivas.
 
 A lo largo de esta charla, describiremos que son las arquitecturas adaptativas, como deben diseñarse y que oportunidades diferenciales ofrecen en relación a las arquitecturas SOLIDas más convencionales. Y descubriremos cómo los mecanismos de JavaScript ofrecen oportunidades increíbles de construcción en este sentido. Una oportunidad imprescindible de redescubrir el lenguaje. No te lo pierdas!
 
